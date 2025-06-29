@@ -1,0 +1,138 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffffffcc, #e6f0ff);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f8fbfd, #e8f0f8);
+  color: #333;
+  padding: 2rem;
+  margin: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+/* Filter Buttons */
+.filters {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  border: none;
+  margin: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+}
+
+.filter-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Gallery Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.2);
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 35px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 45px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 0 15px;
+  transform: translateY(-50%);
+  user-select: none;
+}
+
+.prev { left: 30px; }
+.next { right: 30px; }
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .filter-btn {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  .nav {
+    font-size: 35px;
+  }
+}
+
